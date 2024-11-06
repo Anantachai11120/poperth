@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to Pop Cat</h1>
+    <form id="login-form">
+        <label for="nickname">Enter Nickname:</label>
+        <input type="text" id="nickname" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nickname = document.getElementById('nickname').value;
+            localStorage.setItem('nickname', nickname);
+            window.location.href = 'popcat.html';
+        });
+    </script>
+</body>
+</html>
